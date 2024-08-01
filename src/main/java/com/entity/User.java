@@ -8,27 +8,36 @@ public class User {
 	private String password;
 	
 	
-	
-	
-//	public User(String fullName, String email, String password) {
-//		super();
-//		this.fullName = fullName;
-//		this.email = email;
-//		this.password = password;
-//	}
-//	
-//	
-	
 
 	public User(String fullName, String email, String password) {
-		super();
-		this.fullName = fullName;
+	super();
+	
+	this.fullName = fullName;
 	this.email = email;
 	this.password = password;
 	}
 	
 	
 	
+	public User(int id, String fullName, String email, String password) {
+		super();
+		this.id = id;
+		this.fullName = fullName;
+		this.email = email;
+		this.password = password;
+	}
+
+
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+		
+		
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

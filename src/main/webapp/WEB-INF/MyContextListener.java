@@ -1,14 +1,17 @@
+package com.listner;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+
 import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
 
 @WebListener
-public class MyAppServletContextListener implements ServletContextListener {
+public class MyContextListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        // Application startup logic if needed
+        // Initialization code, if needed
     }
 
     @Override
@@ -20,3 +23,4 @@ public class MyAppServletContextListener implements ServletContextListener {
         }
     }
 }
+

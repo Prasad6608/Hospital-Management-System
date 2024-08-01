@@ -1,3 +1,6 @@
+ <%@page isELIgnored="false"%>
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <nav class="navbar navbar-expand-lg navbar-light  bg-success">
   <div class="container-fluid">
     <a class="navbar-brand text-white" href="#"><i class="fa-solid fa-house-chimney-medical me-1"></i>MediHome</a>
@@ -6,31 +9,46 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+       <c:if test="${  empty userObj }">
+       
         <li class="nav-item ">
           <a class="nav-link text-white" aria-current="page" href="admin_login.jsp"><i  class="fa-solid fa-right-to-bracket me-1"></i>ADMIN</a>
         </li>
         
-                <li class="nav-item">
+         <li class="nav-item">
           <a class="nav-link text-white" href="doctor_login.jsp">DOCTOR</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">APPOINTMENT</a>
+          <a class="nav-link text-white" href="user_appointment.jsp">APPOINTMENT</a>
         </li>
          <li class="nav-item">
           <a class="nav-link text-white" href="user_login.jsp">USER</a>
         </li>
-        <!--<li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>-->
+       
+       </c:if>
         
+        <c:if test="${ not empty userObj }">
+        
+        <li class="nav-item">
+          <a class="nav-link text-white" href="user_appointment.jsp">APPOINTMENT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="view_appointment.jsp">VIEW APPOINTMENT</a>
+        </li>
+        
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-circle-user" ></i>
+          ${userObj.fullName}</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="change_password.jsp">Change Password</a></li>
+            <li><a class="dropdown-item" href="userLogout">Logout</a></li>
+            </ul>
+        </li>
+        
+        
+        </c:if>
+      
       </ul>
       
     </div>

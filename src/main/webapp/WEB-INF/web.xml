@@ -5,4 +5,27 @@
 <web-app>
    
   <display-name>Archetype Created Web Application</display-name>
+  <listener id="idvalue0">
+  	<listener-class>com.listner.MyContextListener</listener-class>
+  </listener>
+  <servlet>
+  	<servlet-name>addDoctor</servlet-name>
+  	<display-name>addDoctor</display-name>
+  	<description></description>
+  	<servlet-class>com.admin.servlet.addDoctor</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Appointment</servlet-name>
+  	<display-name>Appointment</display-name>
+  	<description></description>
+  	<servlet-class>com.user.servlet.Appointment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>addDoctor</servlet-name>
+  	<url-pattern>/addDoctor</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Appointment</servlet-name>
+  	<url-pattern>/Appointment</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-   
+   <%@include file="component/allcss.jsp" %>
 
-       
-       <%@page isELIgnored="false" %>
+<%@page isELIgnored="false"%>
   
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>user login page</title>
-<%@include file="component/allcss.jsp" %>
+
 
 
 
@@ -23,15 +22,7 @@
                   <div class="card paint-card">
                        <div class="card-body">
                            <p class="fs-4 text-center">User Signup</p>
-                           <c:if test="${not empty sucMsg }">
-                               <p class="text-center text-success fs-3"> ${ sucMsg}</p>
-                               <c:remove var="sucMsg" scope="session" />
-                           </c:if>
-                           
-                           <c:if test="${not empty errorMsg }">
-                               <p class="text-center text-danger fs-3"> ${ errorMsg}</p>
-                               <c:remove var="errorMsg" scope="session" />
-                           </c:if>
+                          
                            
                            <form action="user_register" method="post">
                            

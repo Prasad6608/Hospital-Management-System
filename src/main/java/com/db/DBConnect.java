@@ -11,11 +11,11 @@ public class DBConnect {
 	{
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital4","root","root123");
+			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital","root","root123");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		conn.close();
+	
 		return conn;
 		
 	}
